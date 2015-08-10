@@ -1,0 +1,23 @@
+{
+  "name": "tus",
+  "version": "1.0",
+  "authors": [
+    "kishimoto@framelunch.jp <kishimoto@framelunch.jp>"
+  ],
+    "description": "tui special page about a collage of business economics",
+  "main": "index.html",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery.lazyload": "~1.9.5",
+    "velocity": "~1.2.2",
+    "slick": "*"
+  }
+}

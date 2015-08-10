@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, address {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+div, blockquote, p, pre, ul, ol, li, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+}
+table, caption, th, td {
+    font-style: normal;
+    font-weight: normal;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+form, fieldset, input, button, select, optgroup, option, textarea,
+label, legend {
+    margin: 0;
+    padding: 0;
+
+}
+
+span, em, strong, dfn, code, samp, kbd, var, cite, abbr, acronym, q, br,
+ins, del, a, img, object {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    font-weight: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+
+
+

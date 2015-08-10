@@ -1,0 +1,282 @@
+body{
+  font-family: 'Average', serif;
+}
+/*======================================================================================================================
+
+  ヘッダー
+
+======================================================================================================================*/
+header{
+
+  border-top:3px solid #00e7c0;
+  padding-top: 25px;
+
+  h1{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  #headerMenu{
+
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0;
+
+    li{
+      font-size: 22px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 90px;
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      a{
+        text-decoration: none;
+        display: block;
+        color:#000;
+        padding-bottom: 5px;
+        border-bottom:3px solid #fff;
+
+        transition: all 0.3s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover{
+
+          border-bottom:3px solid #00e7c0;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  #headerSns{
+
+    text-align: right;
+
+    width: 1088px;
+    margin: auto;
+
+    li{
+
+      display: inline-block;
+      vertical-align: top;
+
+      a{
+
+        &:hover{
+          opacity: .8;
+        }
+
+      }
+
+    }
+
+  }
+}
+/*======================================================================================================================
+
+  コンテンツ
+
+======================================================================================================================*/
+article{
+
+  #siteThums{
+
+    width: 1088px;
+
+    margin: 30px auto;
+    text-align: center;
+
+    .siteThum{
+
+      margin-bottom: 30px;
+
+      a{
+
+        display: block;
+        text-decoration: none;
+        margin: auto;
+        font-size: 0;
+
+        .siteThumLogo{
+          width: 173px;
+          height: 176px;
+          display: inline-block;
+          vertical-align: top;
+          transition: background-color 0.5s;
+        }
+
+        .scrollPic{
+          width: 910px;
+          height: 175px;
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+
+          img{
+            position: absolute;
+            opacity: 0;
+            transform:scale(0);
+            transition: all 0.5s;
+          }
+        }
+
+        &:hover{
+
+          .siteThumLogo{
+
+            background-color: #00e7c0;
+
+          }
+
+          .scrollPic{
+
+            img{
+              transform:scale(1);
+              opacity: 1;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    #siteThum1{
+      a{
+
+        .siteThumLogo{
+
+          background-image: url(../img/top/siteThum1.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+
+        }
+
+        .scrollPic{
+          background-image: url(../img/top/ThumBg1.jpg);
+          background-size: 910px;
+          animation: bgscroll 32s linear infinite;
+
+          img{
+            top:40px;
+            left: 90px;
+          }
+
+        }
+
+        &:hover{
+
+          .siteThumLogo{
+
+            background-image: url(../img/top/siteThum1h.png);
+
+          }
+
+        }
+
+      }
+
+    }
+    #siteThum2{
+      a{
+
+        .siteThumLogo{
+
+          background-image: url(../img/top/siteThum2.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+
+        }
+
+        .scrollPic{
+          background-image: url(../img/top/ThumBg2.jpg);
+          background-size: 910px;
+          animation: bgscroll 25s linear infinite;
+
+          img{
+            top:40px;
+            left: 90px;
+          }
+
+        }
+
+        &:hover{
+
+          .siteThumLogo{
+
+            background-image: url(../img/top/siteThum2h.png);
+
+          }
+
+        }
+
+      }
+
+    }
+    #siteThum3{
+
+      a{
+
+        .siteThumLogo{
+
+          background-image: url(../img/top/siteThum3.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+
+
+        }
+
+        .scrollPic{
+          background-image: url(../img/top/ThumBg3.jpg);
+          background-size: 910px;
+          background-repeat: repeat-x;
+          animation: bgscroll 20s linear infinite;
+
+          vertical-align: middle;
+
+          img{
+            top:40px;
+            left: 90px;
+          }
+
+        }
+
+        &:hover{
+
+          .siteThumLogo{
+
+            background-image: url(../img/top/siteThum3h.png);
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+    @keyframes bgscroll {
+      0% {background-position: 0 center;}
+      100% {background-position: -910px center;}
+    }
+
+  }
+
+}
+/*======================================================================================================================
+
+  フッター
+
+======================================================================================================================*/
+footer{
+  text-align: center;
+  padding: 20px 0;
+}
