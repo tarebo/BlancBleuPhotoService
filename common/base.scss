@@ -1,0 +1,211 @@
+@import "reset";
+@import "mixin";
+@import "variables";
+@import "math";
+@import "utils";
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+
+@import "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css";
+.wf-notosansjapanese { font-family: "Noto Sans Japanese"; }
+
+@import "https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css";
+.wf-roundedmplus1c { font-family: "Rounded Mplus 1c"; }
+
+@import "https://fonts.googleapis.com/earlyaccess/mplus1p.css";
+.wf-mplus1p { font-family: "Mplus 1p"; }
+
+.font-italic{
+    font-style: italic;
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+html
+{
+    width: 100%;height: 100%;
+    font-size: 14px;
+
+    @include pc
+    {
+    }
+    @include tb
+    {
+        font-size: 12px;
+    }
+    @include tb-p
+    {
+        font-size: 12px;
+    }
+    @include sp
+    {
+        font-size: 12px;
+    }
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+body 
+{
+    background: $white;
+    
+    position: relative;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    height: auto !important;
+    font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace;
+    font-size: 14px/135%;
+    color: #020202;
+    
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+.bold-gothic
+{
+    font-family:"小塚ゴシック Pro", "Hiragino Kaku Gothic ProN","メイリオ", 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace;
+}
+.w1, .w2, .w3, .w6 { -webkit-font-smoothing: antialiased; }
+.w1 {
+    font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1", "Hiragino Kaku Gothic ProN","メイリオ", 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace !important;
+    font-weight: 100 !important;
+}
+.w2 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", ".HiraKakuInterface-W2", "Hiragino Kaku Gothic ProN","メイリオ", Verdana, Meiryo, 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace !important;
+    font-weight: 300 !important;
+}
+.w3 {
+    font-family: "Helvetica Neue", 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', "メイリオ", Verdana, Meiryo, 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace !important;
+    font-weight: 400 !important;
+}
+.w6 {
+    font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro', "メイリオ", 'Oswald', 'ＭＳ Ｐゴシック', sans-serif, sans-serif-condensed, serif, monospace, sans-serif-monospace, serif-monospace !important;
+    font-weight: 700 !important;
+}
+.helv
+{
+    font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+}
+.small
+{
+    font-size: .9rem;
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+.innr-common
+{
+    width:(1280/$base-w)*100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1280px;
+    @include sp
+    {
+        width:(686/$base-w-sp)*100%;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 686px;
+    }
+}
+.innr-common-sp
+{
+    @include sp
+    {
+        width:($innr-sub-w-sp/$base-w-sp)*100%;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: $innr-sub-w-sp*1px;
+    }
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+a
+{
+    &:hover
+    {
+        @include pc-tab
+        {
+            opacity:.7;
+        }
+    }
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+.cap{  position: relative;}
+span
+{
+    &.aster
+    {
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    &.aster + span
+    {
+        padding-left: 1rem;
+        display: block;
+    }
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+img.load
+{
+    opacity:0;
+
+    &.loaded
+    {
+        opacity:1;
+        transition: all 1200ms;
+    }
+    &.cur
+    {
+        opacity:1;
+    }
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+span.r
+{
+    vertical-align: super;
+}
+span.r-ast
+{
+    vertical-align: super;
+    font-size: 8px;
+}
+a.id{
+    width:1px;height: 1px;margin-top: -1px;display: block;
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+@import "https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css";
+.rounded-mplus-1c
+{
+    font-family: "Rounded Mplus 1c",sans-serif;
+}
+.mplus-1c
+{
+    font-family: "Mplus\ 1p",sans-serif;
+}
+.font-weight
+{
+    @include m(100) {  font-weight: 100;  }
+    @include m(200) {  font-weight: 200;  }
+    @include m(300) {  font-weight: 300;  }
+    @include m(400) {  font-weight: 400;  }
+    @include m(500) {  font-weight: 500;  }
+    @include m(600) {  font-weight: 600;  }
+    @include m(700) {  font-weight: 700;  }
+}
+.flex{
+    display: flex;
+}

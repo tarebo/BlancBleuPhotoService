@@ -1,0 +1,65 @@
+@import "variables";
+
+@mixin pc {
+    @media screen and (min-width: #{$pc-width}) {
+        @content;
+    }
+}
+@mixin pc-mid {
+    @media screen and (min-width: #{$pc-width}) and (max-width: #{$pc-l-width - 1px}) {
+        @content;
+    }
+}
+@mixin tb {
+  @media screen and (min-width: #{$tb-width}) and (max-width: #{$pc-width - 1px}) {
+    @content;
+  }
+}
+@mixin tb-p {
+    @media screen and  (max-width: #{$tb-p-width - 1px}) {
+        @content;
+    }
+}
+@mixin tb-l {
+    @media screen and (min-width: #{$tb-p-width}) and (max-width: #{$pc-width - 1px}) {
+        @content;
+    }
+}
+/*
+@mixin tb-p {
+    @media screen and (min-width: #{$tb-width}) and (max-width: #{$tb-p-width - 1px}) {
+        @content;
+    }
+}
+*/
+@mixin sp {
+    @media screen and (max-width: #{$tb-width - 1px}) {
+        @content;
+    }
+}
+@mixin sp_wrap($wrapper-class) {
+    @at-root .#{$wrapper-class}  {
+        @media screen and (max-width: #{$tb-width - 1px}) {
+            @content;
+        }
+    }
+}
+
+@mixin pc-tab {
+    @media screen and (min-width: #{$tb-width}) {
+        @content;
+    }
+}
+
+//for Element '#{_parentName}_'
+@mixin e($name) {
+  @at-root   &_#{$name} {
+    @content;
+  }
+}
+//for Modifier '#{_parentName}-'
+@mixin m($name) {
+  @at-root   &-#{$name} {
+    @content;
+  }
+}

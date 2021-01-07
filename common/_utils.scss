@@ -1,0 +1,166 @@
+.clearfix {  display: block;  min-height: 1%;  }
+.clearfix:after {  content: "";  display: block;  clear: both;  }
+
+.show {  display: block; }
+.hide {  display: none;  visibility: hidden;  }
+.invisible {  visibility: hidden;  }
+
+.pull-clear {  float: none;  }
+.pull-left {  float: left;  }
+.pull-right {  float: right;  }
+
+.txt-left {  text-align: left;  }
+.txt-center {  text-align: center;  }
+.txt-right {  text-align: right;  }
+.txt-just {  text-align: justify;  text-justify: distribute-all-lines;  }
+.txt-bold { font-weight: bold }
+
+.va-top {  vertical-align: top;  }
+.va-middle {  vertical-align: middle;  }
+.va-bottom {  vertical-align: bottom;  }
+
+.block {  display: block;  }
+.block-center {  margin-left: auto;  margin-right: auto;  }
+
+.relative {  position: relative;  }
+.abs {  position: absolute;  }
+.abs-right {  right: 0;  }
+.abs-left {  left: 0;  }
+.abs-top {  top: 0;  }
+.abs-bottom {  top: 0;  }
+.abs-center {  left: 0;  right: 0;  margin-left: auto;  margin-right: auto;  }
+.abs-middle {  top: 0;  bottom: 0;  margin-top: auto;  margin-bottom: auto;  }
+.abs-heart { top:0; bottom:0; left:0; right:0; margin:auto; }
+
+.show-pc{  display: block;  }
+@include sp {
+    .show-pc {  display: none;  }
+}
+.show-sp{  display: none;  }
+@include sp {
+    .show-sp {  display: block;  }
+}
+.show-tb-sp {  display: block;  }
+@include pc {
+    .show-tb-sp {
+        display: none;
+    }
+}
+.tb-p-hid{
+    @include tb-p
+    {
+        display: none;
+    }
+}
+
+/** Add for this project**/
+.mt5 { margin-top: 5px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mt50 { margin-top: 50px; }
+.mb0  { margin-bottom: 0;}
+
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+
+.pt5 {  padding-top: 5px;  }
+.pt10 {  padding-top: 10px;  }
+.pt15 {  padding-top: 15px;  }
+.pt20 {  padding-top: 20px;  }
+
+.pb5 {  padding-bottom: 5px;  }
+.pb10 {  padding-bottom: 10px;  }
+.pb15 {  padding-bottom: 15px;  }
+.pb20 {  padding-bottom: 20px;  }
+
+.btn {
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+    background: none;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+.btn-default {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid $gray-light;
+    background: white;
+    color: $gray-dark;
+    font-size: 1.6rem;
+}
+.list-left
+{
+    @extend .clearfix;
+    list-style: none;
+
+    &>li
+    {
+        float: left;
+        margin-left: 1rem;
+        &:first-child
+        {
+            margin-left: 0;
+        }
+    }
+}
+.list-left-bottom
+{
+    list-style: none;
+    font-size: 0;
+
+    &>*
+    {
+        display: inline-block;
+        vertical-align: bottom;
+        font-size: 1rem;
+        margin-left: 1rem;
+        &:first-child
+        {
+            margin-left: 0;
+        }
+    }
+}
+
+
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+.sp_oredr
+{
+    @include m(1){box-ordinal-group:1; -moz-box-ordinal-group:1; -webkit-box-ordinal-group:1;}
+    @include m(2){box-ordinal-group:2; -moz-box-ordinal-group:2; -webkit-box-ordinal-group:2;}
+    @include m(3){box-ordinal-group:3;}
+    @include m(4){box-ordinal-group:4;}
+    @include m(5){box-ordinal-group:5;}
+    @include m(6){box-ordinal-group:6;}
+    @include m(7){box-ordinal-group:7;}
+    @include m(8){box-ordinal-group:8;}
+    @include m(9){box-ordinal-group:9;}
+    @include m(10){box-ordinal-group:10;}
+}
+//=======================================================================================================================================
+//
+//=======================================================================================================================================
+.m-t
+{
+    @include m(10){margin-top: 10px;}
+    @include m(20){margin-top: 20px;}
+    @include m(30){margin-top: 30px;}
+    @include m(40){margin-top: 40px;}
+    @include m(50){margin-top: 50px;}
+    @include m(60){margin-top: 60px;}
+    @include m(70){margin-top: 70px;}
+    @include m(80){margin-top: 80px;}
+    @include m(90){margin-top: 90px;}
+    @include m(100){margin-top: 100px;}
+}

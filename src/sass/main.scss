@@ -1,5 +1,13 @@
+
+@import "../../common/base.scss";
+
 body{
   font-family: 'Average', serif;
+}
+h2{
+  font-size: 2rem;
+  text-align: center;
+  margin: 5rem auto;
 }
 /*======================================================================================================================
 
@@ -14,6 +22,15 @@ header{
   h1{
     font-size: 32px;
     text-align: center;
+    
+    a {
+      text-decoration: none;
+      color:  inherit;
+    }
+    
+    @include sp{
+      margin-top: 60px;
+    }
   }
 
   #headerMenu{
@@ -22,10 +39,11 @@ header{
     text-align: center;
     font-size: 0;
 
+    display: flex;
+    justify-content: center;
+
     li{
       font-size: 22px;
-      display: inline-block;
-      vertical-align: top;
       margin-left: 90px;
 
       &:first-child{
@@ -38,6 +56,11 @@ header{
         color:#000;
         padding-bottom: 5px;
         border-bottom:3px solid #fff;
+        
+        
+        @include sp{
+          font-size: 1rem;
+        }
 
         transition: all 0.3s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -55,20 +78,36 @@ header{
 
   #headerSns{
 
-    text-align: right;
-
-    width: 1088px;
+    width: 93%;
+    max-width: 1200px;
     margin: auto;
 
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    
+    @include sp{
+      width:100%;
+    }
+    
     li{
 
-      display: inline-block;
-      vertical-align: top;
+      margin: auto 0 auto 10px;
 
       a{
+        
 
         &:hover{
           opacity: .8;
+        }
+        
+        img{
+          transform: scale(.8);
+          @include sp{
+            height: 20px;
+            width:auto;
+          }
         }
 
       }
@@ -86,14 +125,24 @@ article{
 
   #siteThums{
 
-    width: 1088px;
+    width:93%;
+    max-width: 1200px;
 
     margin: 30px auto;
     text-align: center;
+    
+    @include sp{
+      margin: 60px auto;
+      width:100%;
+    }
 
     .siteThum{
 
       margin-bottom: 30px;
+      
+      @include sp{
+        margin-bottom: 80px;
+      }
 
       a{
 
@@ -102,7 +151,7 @@ article{
         margin: auto;
         font-size: 0;
 
-        .siteThumLogo{
+        .siteThumLogo {
           width: 173px;
           height: 176px;
           display: inline-block;
@@ -116,11 +165,15 @@ article{
           display: inline-block;
           vertical-align: top;
           position: relative;
+          
+          @include sp{
+            width:100%;
+          }
 
           img{
             position: absolute;
             opacity: 0;
-            transform:scale(0);
+            transform:scaleX(0.8);
             transition: all 0.5s;
           }
         }
@@ -161,12 +214,18 @@ article{
 
         .scrollPic{
           background-image: url(../img/top/ThumBg1.jpg);
-          background-size: 910px;
+          background-size: auto 100%;
           animation: bgscroll 32s linear infinite;
 
           img{
             top:40px;
             left: 90px;
+            @include sp{
+
+              top: 36%;
+              left: 0;
+              max-width: 100%;
+            }
           }
 
         }
@@ -203,6 +262,12 @@ article{
           img{
             top:40px;
             left: 90px;
+            @include sp{
+
+              top: 36%;
+              left: 0;
+              max-width: 100%;
+            }
           }
 
         }
@@ -244,6 +309,13 @@ article{
           img{
             top:40px;
             left: 90px;
+            
+            @include sp{
+
+              top: 36%;
+              left: 0;
+              max-width: 100%;
+            }
           }
 
         }
@@ -279,4 +351,56 @@ article{
 footer{
   text-align: center;
   padding: 20px 0;
+}
+/*======================================================================================================================
+
+  MAP
+
+======================================================================================================================*/
+.if-Gmap{
+  width:70%;
+  margin: auto auto 6rem auto;
+  position: relative;
+  @include sp{
+    width:97%;
+  }
+  &:before{
+    display: block;
+    content: '';
+    width:100%;
+    padding-top: 62%;
+  }
+  
+  &>iframe{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+/*======================================================================================================================
+
+  about
+
+======================================================================================================================*/
+.aboutus {
+  width: 50%;
+  margin: 5rem auto;
+  
+  @include sp {
+    width:80%;
+  }
+  
+  & > * {
+    line-height: 2;
+    letter-spacing: .5rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  &_text {
+  }
 }

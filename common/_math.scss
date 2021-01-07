@@ -1,0 +1,110 @@
+
+$pi: 3.14159265359; // 円周率
+$iter: 10;          // テイラー展開時の項数（多いほど近似精度が高い）
+
+/* 冪乗計算(乗数は整数のみ)
+ *
+ * $base: 冪乗される数
+ * $exp : 冪乗する回数
+ * 
+ * @return: $baseの$exp乗
+ * 
+ * 例: $base=2, $exp=3 => @return=8
+ */
+
+@function pow($base, $exp){
+    $value: $base;
+    @if $exp >= 1 {
+        @for $i from 1 through $exp {
+            $value: $value * $base;
+        }
+    } @else if $exp <= -1 {
+        @for $i from 1 through -$exp {
+            $value: $value / $base;
+        }
+    } @else {
+        $value: 1;
+    }
+    @return $value;
+}
+
+/* 階乗計算 
+ *
+ * $val: 階数
+ * 
+ * @return: $valの階乗
+ * 
+ * 例: $val=5 => @return=120
+ */
+
+@function fact($val){
+    $value: 1;
+    @if $val > 0{
+        @for $i from 1 through $val{
+            $value: $value * $i;
+        }
+    } @else {
+        $value: 1;
+    }
+    @return $value;
+}
+
+/* 正弦(sin)計算 
+ *
+ * $angle:   角度(弧度法)
+ * $degrees: $angleが度数かどうか
+ * 
+ * @return: sin($angle)
+ * 
+ * 例: $angle=30, $degrees=true => @return=0.5
+ */
+
+@function sin($angle, $degrees: false) {
+    $sin: 0;
+    @if $degrees {
+        $angle: $angle / 180 * $pi;
+    }
+    @for $n from 0 through $iter - 1 {
+        $sin: $sin + (pow(-1, $n) / fact(2*$n + 1)) * pow($angle, 2*$n + 1);
+    }
+    @return $sin;
+}
+
+/* 余弦(cos)計算 
+ *
+ * $angle:   角度(弧度法)
+ * $degrees: $angleが度数かどうか
+ * 
+ * @return: cos($angle)
+ * 
+ * 例: $angle=60, $degrees=true => @return=0.5
+ */
+
+@function cos($angle, $degrees: false){
+    $cos: 0;
+    @if $degrees{
+        $angle: $angle / 180 * $pi;
+    }
+    @for $n from 0 through $iter - 1 {
+        $cos: $cos + (pow(-1, $n) / fact(2*$n)) * pow($angle, 2*$n);
+    }
+    @return $cos;
+}
+
+/* 正接(tan)計算 
+ *
+ * $angle:   角度(弧度法)
+ * $degrees: $angleが度数かどうか
+ * 
+ * @return: tan($angle)
+ * 
+ * 例: $angle=45, $degrees=true => @return=1
+ */
+
+@function tan($angle, $degrees: false){
+    @if $degrees{
+        $angle: $angle / 180 * $pi;
+    }
+    $tan: sin($angle) / cos($angle); // 近似値なので無限大にはならない
+    @return $tan
+}
